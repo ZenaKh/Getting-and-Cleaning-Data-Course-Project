@@ -1,12 +1,12 @@
 ## Read data
-subjectTest <- read.table("D:/Study/datascientist/week4Cours3/UCI HAR Dataset/test/subject_test.txt")
-Ytest <- read.table("D:/Study/datascientist/week4Cours3/UCI HAR Dataset/test/y_test.txt")
-Xtest <- read.table("D:/Study/datascientist/week4Cours3/UCI HAR Dataset/test/X_test.txt")
-subjectTraining <- read.table("D:/Study/datascientist/week4Cours3/UCI HAR Dataset/train/subject_train.txt")
-Ytraining <-read.table("D:/Study/datascientist/week4Cours3/UCI HAR Dataset/train/y_train.txt")
-Xtraining <- read.table("D:/Study/datascientist/week4Cours3/UCI HAR Dataset/train/X_train.txt")
-features <- read.table("D:/Study/datascientist/week4Cours3/UCI HAR Dataset/features.txt")
-activityLabels <- read.table("D:/Study/datascientist/week4Cours3/UCI HAR Dataset/activity_labels.txt")
+subjectTest <- read.table("./UCI HAR Dataset/test/subject_test.txt")
+Ytest <- read.table("./UCI HAR Dataset/test/y_test.txt")
+Xtest <- read.table("./UCI HAR Dataset/test/X_test.txt")
+subjectTraining <- read.table("./UCI HAR Dataset/train/subject_train.txt")
+Ytraining <-read.table("./UCI HAR Dataset/train/y_train.txt")
+Xtraining <- read.table("./UCI HAR Dataset/train/X_train.txt")
+features <- read.table("./UCI HAR Dataset/features.txt")
+activityLabels <- read.table("./UCI HAR Dataset/activity_labels.txt")
 
 ##giving a names to the columns
 colnames(subjectTest) <- "subject"
@@ -49,7 +49,7 @@ colnames(AllDataMeanStdActiviry) <- colnames
 tidyData = aggregate(. ~subject + activity + activityname, AllDataMeanStdActiviry, mean)
 
 ##put data to the file
-write.table(tidyData, "D:/Study/datascientist/week4Cours3/UCI HAR Dataset/tidyData.txt", row.names=FALSE, sep='\t')
+write.table(tidyData, "./UCI HAR Dataset/tidyData.txt", row.names=FALSE, sep='\t')
 
 
 
